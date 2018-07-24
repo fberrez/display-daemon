@@ -1,0 +1,13 @@
+[Unit]
+Description=Display service
+
+[Service]
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/fberrez/.Xauthority
+ExecStart=/home/fberrez/.display-daemon.sh
+Restart=on-failure
+CanReload=yes
+StartLimitBurst=0
+
+[Install]
+WantedBy=multi-user.target
